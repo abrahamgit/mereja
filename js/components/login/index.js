@@ -95,11 +95,30 @@ class Login extends Component {
               <View style={styles.bg}>
                 <Field name="email" component={this.renderInput} />
                 <Field name="password" component={this.renderInput} />
-                <Button
+                
+                <Button  transparent
+                onPress={() => this.props.navigation.navigate("Signup")}
+                >
+              <Text>Create a new account</Text>
+               </Button>
+                
+                <Button full success
                   style={styles.btn}
                   onPress={() => this.props.navigation.navigate("Home")}
                 >
                   <Text>Login</Text>
+                </Button>
+
+
+                 <Button full warning
+                      style={styles.btnface}
+                 >
+                  <Text>Login with Facebook</Text>
+                </Button>
+                <Button full danger
+                  style={styles.btngoogle}
+                >
+                  <Text>Login with Google</Text>
                 </Button>
               </View>
             </Image>

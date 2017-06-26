@@ -43,22 +43,7 @@ class Home extends Component {
     return (
       <Container style={styles.container}>
         <Header>
-
           <Left>
-            <Button
-              transparent
-              onPress={() => DrawerNav.navigate("DrawerOpen")}
-            >
-              <Icon active name="menu" />
-            </Button>
-          </Left>
-          
-
-          <Body>
-            <Title>Home</Title>
-          </Body>
-
-          <Right>
 
             <Button
               transparent
@@ -74,8 +59,20 @@ class Home extends Component {
             >
               <Icon active name="power" />
             </Button>
-          </Right>
+          </Left>
 
+          <Body>
+            <Title>Home</Title>
+          </Body>
+
+          <Right>
+            <Button
+              transparent
+              onPress={() => DrawerNav.navigate("DrawerOpen")}
+            >
+              <Icon active name="menu" />
+            </Button>
+          </Right>
         </Header>
         <Content>
           <Grid style={styles.mt}>

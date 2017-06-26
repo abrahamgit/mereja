@@ -21,8 +21,8 @@ export default {
   },
   bg: {
     flex: 1,
-    marginTop: deviceHeight / 1.75,
-    paddingTop: 20,
+    marginTop: deviceHeight / 2.5,
+    // paddingTop: 20,
     paddingLeft: 10,
     paddingRight: 10,
     paddingBottom: 30,
@@ -33,6 +33,16 @@ export default {
   },
   btn: {
     marginTop: 20,
-    alignSelf: 'center',
+    backgroundColor: '#38a6c1'
   },
+  btnface:{
+    marginTop:20,
+  },
+   btngoogle:{
+    marginTop:20,
+  },
+  btnnew:{
+    backgroundColor:'#fff',
+    color:'blue',
+  }
 };

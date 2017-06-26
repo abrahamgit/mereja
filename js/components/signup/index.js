@@ -5,18 +5,20 @@ import {
   Header,
   Title,
   Content,
-  // Text,
+  Text,
   Button,
   Icon,
   Left,
   Right,
-  Body
+  Body,
+  Form,
+  Label,
+  Input,
+  Item,
 } from "native-base";
+import styles from "./styles";
 
-// import Tab1 from './tabOne';
-// import Tab2 from './tabTwo';
-
-class BlankPage2 extends Component {
+class Signup extends Component {
   static navigationOptions = {
     header: null
   };
@@ -46,13 +48,35 @@ class BlankPage2 extends Component {
         </Header>
 
         <Content padder>
-          <Title>
-            Create Something Awesome . . .
-          </Title>
+          <Form>
+              <Item floatingLabel>
+                <Label>Username</Label>
+                <Input />
+              </Item>
+              <Item floatingLabel last>
+                <Label>Password</Label>
+                <Input />
+              </Item>
+              <Item floatingLabel>
+                <Label>Enter Password</Label>
+                <Input />
+              </Item>
+              <Item floatingLabel last>
+                <Label>ReEnter your Password</Label>
+                <Input />
+              </Item>
+
+              <Button  full success
+                style={styles.signup}
+                onPress={() => this.props.navigation.navigate("TenderCatagories")}
+              >
+                <Text> Sign Up </Text>
+              </Button>
+          </Form>
         </Content>
       </Container>
     );
   }
 }
 
-export default BlankPage2;
+export default Signup;
