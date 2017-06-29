@@ -18,12 +18,16 @@ import {
   Tab,
   Tabs,
   TabHeading,
+  List,
+  ListItem
 } from "native-base";
 import { Grid, Row } from "react-native-easy-grid";
 
 import { setIndex } from "../../actions/list";
 import { openDrawer } from "../../actions/drawer";
 import styles from "./styles";
+
+const datas = ['Simon Mignolet', 'Nathaniel Clyne', 'Dejan Lovren', 'Mama Sakho', 'Alberto Moreno', 'Emre Can', 'Joe Allen', 'Phil Coutinho'];
 
 
 class Home extends Component {
@@ -85,6 +89,18 @@ class Home extends Component {
 
         <Content>
           <Text>Service Lists </Text>
+
+          <List
+            dataArray={datas} renderRow={data =>
+              <ListItem>
+                <Text>{data}</Text>
+                <Right>
+                  <Icon name="arrow-forward" />
+                </Right>
+              </ListItem>
+          }
+          />
+          
           <Button onPress={() => this.props.navigation.navigate("ServiceDetail")}>
           <Text>Go to Service detail</Text>
         </Button>

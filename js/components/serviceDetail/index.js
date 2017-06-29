@@ -18,6 +18,9 @@ import {
   Tab,
   Tabs,
   TabHeading,
+  List,
+  ListItem,
+  CheckBox,
 } from "native-base";
 import { Grid, Row } from "react-native-easy-grid";
 
@@ -36,7 +39,15 @@ class Home extends Component {
     list: React.PropTypes.arrayOf(React.PropTypes.string),
     openDrawer: React.PropTypes.func
   };
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      checkbox1: true,
+      checkbox2: false,
+      checkbox3: false,
+      checkbox4: false,
+    };
+  }
   newPage(index) {
     this.props.setIndex(index);
     Actions.blankPage();
@@ -84,10 +95,48 @@ class Home extends Component {
         </Header>
 
         <Content>
-          <Text>List of Requirement and Procedure</Text>
-          
+          <ListItem itemDivider>
+            <Text>Requirements</Text>
+          </ListItem>
+          <ListItem>
+            <Text>Aaron Bennet</Text>
+            <CheckBox style={styles.checkbox}checked={this.state.checkbox1}/>
+          </ListItem>
+          <ListItem>
+            <Text>Ali Connors</Text>
+            <CheckBox checked={this.state.checkbox2}/>
+          </ListItem>
+          <ListItem>
+            <Text>Allen Lee</Text>
+           <CheckBox checked={this.state.checkbox2}/>
+          </ListItem>
+          <ListItem>
+            <Text>Andy Hertzfeld</Text>
+            <CheckBox checked={this.state.checkbox2}/>
+          </ListItem>
+          <ListItem last>
+            <Text>Angana Ghosh</Text>
+            <CheckBox checked={this.state.checkbox2}/>
+          </ListItem>
+
+          <ListItem itemDivider>
+            <Text>Procedure</Text>
+          </ListItem>
+          <ListItem>
+            <Text>Bradley Horowitz</Text>
+            <CheckBox checked={this.state.checkbox2}/>
+          </ListItem>
+          <ListItem>
+            <Text>Brian Swetland</Text>
+            <CheckBox checked={this.state.checkbox2}/>
+          </ListItem>
+          <ListItem last>
+            <Text>Brittany Kelso</Text>
+            <CheckBox checked={this.state.checkbox2}/>
+          </ListItem>
         </Content>
       </Container>
+      
     );
   }
 }
