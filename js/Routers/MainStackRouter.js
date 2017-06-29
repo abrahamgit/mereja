@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import Login from "../components/login/";
-import Home from "../components/home/";
+import Home1 from "../components/home1";
+import Company from "../components/company/";
+import Categories from "../components/categories";
+import Service from "../components/service";
 import BlankPage from "../components/blankPage";
-import Signup from "../components/signup";
-// import TabOne from "../components/home";
-// import TabTwo from "../components/home";
-import TenderCatagories from "../components/tenderCatagories";
+import About from "../components/about";
+import Searchbar from "../components/searchbar";
+import ServiceDetail from "../components/serviceDetail";
 import HomeDrawerRouter from "./HomeDrawerRouter";
 import { StackNavigator } from "react-navigation";
 import { Header, Left, Button, Icon, Body, Title, Right } from "native-base";
@@ -13,11 +14,15 @@ HomeDrawerRouter.navigationOptions = ({ navigation }) => ({
   header: null
 });
 export default (StackNav = StackNavigator({
-  Login: { screen: Login },
-  Home: { screen: Home },
+  Home1: { screen: Home1 },
+  Categories:{screen:Categories},
+  Company: { screen: Company },
+  Service: {screen:Service},
   BlankPage: { screen: BlankPage },
-  Signup: {screen:Signup},
-  // TabOne:{screen:TabOne},
-  // TabTwo:{screen:TabTwo},
-  TenderCatagories: {screen:TenderCatagories},
+  Searchbar: {screen:Searchbar},
+  About: {screen:About},
+  ServiceDetail:{screen:ServiceDetail},
+  
 }));
+
+

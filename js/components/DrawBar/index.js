@@ -9,7 +9,9 @@ import {
   Content,
   Icon
 } from "native-base";
-const routes = ["Home", "BlankPage2"];
+const routes = ["Home1", "BlankPage2", "About"];
+const background = require("../../../images/shadow.png");
+
 export default class DrawBar extends React.Component {
   static navigationOptions = {
     header: null
@@ -24,6 +26,7 @@ export default class DrawBar extends React.Component {
             }}
             style={{
               height: 120,
+              backgroundColor:"yellow",
               alignSelf: "stretch",
               justifyContent: "center",
               alignItems: "center"
@@ -40,7 +43,7 @@ export default class DrawBar extends React.Component {
             >
               <Image
                 square
-                style={{ height: 80, width: 70 }}
+                style={{ height: 80, width: 70, backgroundColor: "green", }}
                 source={{
                   uri: "https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/react-navigation/img/logo.png"
                 }}

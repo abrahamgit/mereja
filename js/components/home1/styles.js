@@ -1,21 +1,48 @@
 
 const React = require('react-native');
 
-const { StyleSheet } = React;
+const { StyleSheet, Dimensions } = React;
+
+const deviceHeight = Dimensions.get('window').height;
+
 export default {
   container: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
     backgroundColor: '#FBFAFA',
   },
-  row: {
+  shadow: {
     flex: 1,
-    alignItems: 'center',
+    width: null,
+    height: null,
   },
-  text: {
-    fontSize: 20,
-    marginBottom: 15,
-    alignItems: 'center',
+  bg: {
+    flex: 1,
+    marginTop: deviceHeight / 2.5,
+    // paddingTop: 20,
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingBottom: 30,
+    bottom: 0,
   },
-  mt: {
-    marginTop: 18,
+  input: {
+    marginBottom: 20,
   },
+  btn: {
+    marginTop: 20,
+    backgroundColor: '#38a6c1'
+  },
+  btnface:{
+    marginTop:20,
+  },
+   btngoogle:{
+    marginTop:20,
+  },
+  btnnew:{
+    backgroundColor:'#fff',
+    color:'blue',
+  }
 };
