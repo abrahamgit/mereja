@@ -44,9 +44,35 @@ class Home extends Component {
     this.state = {
       checkbox1: true,
       checkbox2: false,
-      checkbox3: false,
-      checkbox4: false,
+     //create a data file 
     };
+  }
+//handle all the toggles using only one function 
+//find a way to save it to local storage 
+  toggleSwitch1() {
+    this.setState({
+      checkbox1: !this.state.checkbox1,
+    });
+  }
+
+
+
+  toggleSwitch2() {
+    this.setState({
+      checkbox2: !this.state.checkbox2,
+    });
+  }
+
+  toggleSwitch3() {
+    this.setState({
+      checkbox3: !this.state.checkbox3,
+    });
+  }
+
+  toggleSwitch4() {
+    this.setState({
+      checkbox4: !this.state.checkbox4,
+    });
   }
   newPage(index) {
     this.props.setIndex(index);
@@ -94,46 +120,36 @@ class Home extends Component {
 
         </Header>
 
-        <Content>
-          <ListItem itemDivider>
-            <Text>Requirements</Text>
-          </ListItem>
-          <ListItem>
-            <Text>Aaron Bennet</Text>
-            <CheckBox style={styles.checkbox}checked={this.state.checkbox1}/>
-          </ListItem>
-          <ListItem>
-            <Text>Ali Connors</Text>
-            <CheckBox checked={this.state.checkbox2}/>
-          </ListItem>
-          <ListItem>
-            <Text>Allen Lee</Text>
-           <CheckBox checked={this.state.checkbox2}/>
-          </ListItem>
-          <ListItem>
-            <Text>Andy Hertzfeld</Text>
-            <CheckBox checked={this.state.checkbox2}/>
-          </ListItem>
-          <ListItem last>
-            <Text>Angana Ghosh</Text>
-            <CheckBox checked={this.state.checkbox2}/>
+       <Content>
+         <List>
+
+           <ListItem itemDivider>
+              <Text>Requirements</Text>
+            </ListItem> 
+          <ListItem button onPress={() => this.toggleSwitch1()}>
+            
+            <Body>
+              <Text>List of Requirements </Text>
+            </Body>
+            <Right>
+              <CheckBox checked={this.state.checkbox1} onPress={() => this.toggleSwitch1()} />
+            </Right>
           </ListItem>
 
           <ListItem itemDivider>
-            <Text>Procedure</Text>
+              <Text>Procedures</Text>
+            </ListItem> 
+          <ListItem button onPress={() => this.toggleSwitch2()}>
+            
+            <Body>
+              <Text>List of procedures</Text>
+            </Body>
+            <Right>
+              <CheckBox checked={this.state.checkbox2} onPress={() => this.toggleSwitch2()} />
+            </Right>
           </ListItem>
-          <ListItem>
-            <Text>Bradley Horowitz</Text>
-            <CheckBox checked={this.state.checkbox2}/>
-          </ListItem>
-          <ListItem>
-            <Text>Brian Swetland</Text>
-            <CheckBox checked={this.state.checkbox2}/>
-          </ListItem>
-          <ListItem last>
-            <Text>Brittany Kelso</Text>
-            <CheckBox checked={this.state.checkbox2}/>
-          </ListItem>
+          
+          </List>
         </Content>
       </Container>
       
