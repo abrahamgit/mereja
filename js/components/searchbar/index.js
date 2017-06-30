@@ -22,13 +22,29 @@ import {
   Input,
 } from "native-base";
 import { Grid, Row } from "react-native-easy-grid";
-
 import { setIndex } from "../../actions/list";
 import { openDrawer } from "../../actions/drawer";
 import styles from "./styles";
 
+//the api is here 
+import { mergaApi } from "../../utils/api.js" 
+
 
 class Home extends Component {
+
+//constractor added 
+  constructor(props){
+    super(props);
+    this.state ={
+      //for the refreshign perpose 
+      refreshing:true,
+    }
+  }
+
+
+
+
+
   static navigationOptions = {
     header: null
   };
@@ -49,21 +65,23 @@ class Home extends Component {
     return (
       <Container style={styles.container}>
         <Header style={{backgroundColor:'#7cb4b4'}} searchBar rounded>
-   
+        
           <Button transparent small onPress={() => DrawerNav.navigate("DrawerOpen")}>
             <Icon active name="menu" />
           </Button>
        
         
-          <Item>
+          <Item style={{width: 100}}>
             <Icon active name="search" />
             <Input placeholder="Search" />
-          </Item>
 
-
-            <Button transparent>
+             <Button transparent>
             <Text>Search</Text>
           </Button>
+          </Item>
+          
+           
+        
           
         </Header>
 

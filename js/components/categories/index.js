@@ -28,7 +28,7 @@ import { setIndex } from "../../actions/list";
 import { openDrawer } from "../../actions/drawer";
 import styles from "./styles";
 
-const datas = ['Simon Mignolet', 'Nathaniel Clyne', 'Dejan Lovren', 'Mama Sakho', 'Alberto Moreno', 'Emre Can', 'Joe Allen', 'Phil Coutinho'];
+const datas = ['Education', 'Finance', ' Buisness ', 'Transportation '];
 
 class Home extends Component {
   static navigationOptions = {
