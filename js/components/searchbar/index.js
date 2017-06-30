@@ -49,18 +49,22 @@ class Home extends Component {
     return (
       <Container style={styles.container}>
         <Header searchBar rounded>
+   
           <Button transparent small onPress={() => DrawerNav.navigate("DrawerOpen")}>
             <Icon active name="menu" />
           </Button>
+       
         
           <Item>
             <Icon active name="search" />
             <Input placeholder="Search" />
-            <Icon active name="people" />
-          </Item>
-          <Button transparent>
+           
+
+            <Button transparent>
             <Text>Search</Text>
           </Button>
+          </Item>
+          
         </Header>
 
         <Content padder >

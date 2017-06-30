@@ -21,9 +21,9 @@ export default class DrawBar extends React.Component {
       <Container>
         <Content>
           <Image
-            source={{
-              uri: "https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/react-navigation/img/drawer-cover.png"
-            }}
+            source={require('../../../images/shadow.png')
+              
+            }
             style={{
               height: 120,
               backgroundColor:"yellow",

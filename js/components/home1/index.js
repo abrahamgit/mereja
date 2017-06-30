@@ -20,7 +20,10 @@ const background = require("../../../images/shadow.png");
 
 
 
-class Login extends Component {
+class Home1 extends Component {
+  static navigationOptions = {
+    header: null
+  };
   static propTypes = {
     setUser: React.PropTypes.func
   };
@@ -54,7 +57,7 @@ class Login extends Component {
                  <Button full primary
                       style={styles.btnface}
                       onPress={() => this.props.navigation.navigate("Searchbar")}
-                 ><Icon active name="sth" />
+                 >
                   <Text>Search By Service</Text>
                 </Button>
                 
@@ -73,4 +76,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Home1;

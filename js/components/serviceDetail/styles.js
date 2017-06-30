@@ -18,4 +18,7 @@ export default {
   mt: {
     marginTop: 18,
   },
+  checkbox:{
+    alignItems:'flex-end'
+  }
 };

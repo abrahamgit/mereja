@@ -18,6 +18,9 @@ import {
   Tab,
   Tabs,
   TabHeading,
+  List,
+  ListItem,
+  CheckBox,
 } from "native-base";
 import { Grid, Row } from "react-native-easy-grid";
 
@@ -36,7 +39,41 @@ class Home extends Component {
     list: React.PropTypes.arrayOf(React.PropTypes.string),
     openDrawer: React.PropTypes.func
   };
+  constructor(props) {
+    super(props);
+    this.state = {
+      checkbox1: true,
+      checkbox2: false,
+     //create a data file 
+    };
+  }
+//handle all the toggles using only one function 
+//find a way to save it to local storage 
+  toggleSwitch1() {
+    this.setState({
+      checkbox1: !this.state.checkbox1,
+    });
+  }
 
+
+
+  toggleSwitch2() {
+    this.setState({
+      checkbox2: !this.state.checkbox2,
+    });
+  }
+
+  toggleSwitch3() {
+    this.setState({
+      checkbox3: !this.state.checkbox3,
+    });
+  }
+
+  toggleSwitch4() {
+    this.setState({
+      checkbox4: !this.state.checkbox4,
+    });
+  }
   newPage(index) {
     this.props.setIndex(index);
     Actions.blankPage();
@@ -83,11 +120,39 @@ class Home extends Component {
 
         </Header>
 
-        <Content>
-          <Text>List of Requirement and Procedure</Text>
+       <Content>
+         <List>
+
+           <ListItem itemDivider>
+              <Text>Requirements</Text>
+            </ListItem> 
+          <ListItem button onPress={() => this.toggleSwitch1()}>
+            
+            <Body>
+              <Text>List of Requirements </Text>
+            </Body>
+            <Right>
+              <CheckBox checked={this.state.checkbox1} onPress={() => this.toggleSwitch1()} />
+            </Right>
+          </ListItem>
+
+          <ListItem itemDivider>
+              <Text>Procedures</Text>
+            </ListItem> 
+          <ListItem button onPress={() => this.toggleSwitch2()}>
+            
+            <Body>
+              <Text>List of procedures</Text>
+            </Body>
+            <Right>
+              <CheckBox checked={this.state.checkbox2} onPress={() => this.toggleSwitch2()} />
+            </Right>
+          </ListItem>
           
+          </List>
         </Content>
       </Container>
+      
     );
   }
 }
