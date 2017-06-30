@@ -7,10 +7,13 @@ import {
   List,
   ListItem,
   Content,
+  Images,
   Icon
 } from "native-base";
-const routes = ["Home1", "BlankPage2", "About"];
-const background = require("../../../images/shadow.png");
+const routes = ["Home1", "Categories","Searchbar", "About"];
+
+const tabbar = require("../../../images/tab/tabBar.png");
+
 
 export default class DrawBar extends React.Component {
   static navigationOptions = {
@@ -19,9 +22,10 @@ export default class DrawBar extends React.Component {
   render() {
     return (
       <Container>
-        <Content>
+        <Content style={{backgroundColor:"#c7e4eb"}} >
           <Image
-            source={require('../../../images/shadow.png')
+          
+            source={require("../../../images/tab/tabBar.png")
               
             }
             style={{
@@ -42,11 +46,9 @@ export default class DrawBar extends React.Component {
               onPress={() => this.props.navigation.navigate("DrawerClose")}
             >
               <Image
-                square
-                style={{ height: 80, width: 70, backgroundColor: "green", }}
-                source={{
-                  uri: "https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/react-navigation/img/logo.png"
-                }}
+                
+                style={{ height: 80, width: 200 }}
+                    source={require("../../../images/tab/logo.png")}
               />
             </TouchableOpacity>
           </Image>

@@ -48,7 +48,7 @@ class Home extends Component {
     console.log(DrawNav, "786785786");
     return (
       <Container style={styles.container}>
-        <Header searchBar rounded>
+        <Header style={{backgroundColor:'#7cb4b4'}} searchBar rounded>
    
           <Button transparent small onPress={() => DrawerNav.navigate("DrawerOpen")}>
             <Icon active name="menu" />
@@ -58,12 +58,12 @@ class Home extends Component {
           <Item>
             <Icon active name="search" />
             <Input placeholder="Search" />
-           
+          </Item>
+
 
             <Button transparent>
             <Text>Search</Text>
           </Button>
-          </Item>
           
         </Header>
 
