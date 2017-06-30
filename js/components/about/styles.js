@@ -6,7 +6,9 @@ const { StyleSheet, Dimensions } = React;
 const deviceHeight = Dimensions.get('window').height;
 
 export default {
-  
+  container:{
+    backgroundColor:"#c7e4eb"
+  },
   signup:{
     marginTop:20,
   },

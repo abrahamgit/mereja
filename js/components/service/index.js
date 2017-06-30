@@ -50,7 +50,7 @@ class Home extends Component {
     console.log(DrawNav, "786785786");
     return (
       <Container style={styles.container}>
-        <Header>
+        <Header style={{backgroundColor:'#7cb4b4'}}>
 
 
           <Left>
