@@ -42,8 +42,10 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      checkbox1: true,
+      checkbox1: false,
       checkbox2: false,
+      checkbox3: false,
+      checkbox4: false
      //create a data file 
     };
   }
@@ -129,23 +131,45 @@ class Home extends Component {
           <ListItem button onPress={() => this.toggleSwitch1()}>
             
             <Body>
-              <Text>List of Requirements </Text>
+              <Text>Four 3X4 photo  </Text>
             </Body>
             <Right>
               <CheckBox checked={this.state.checkbox1} onPress={() => this.toggleSwitch1()} />
             </Right>
           </ListItem>
 
+          <ListItem button onPress={() => this.toggleSwitch3()}>
+            
+            <Body>
+              <Text>copy of your ID </Text>
+            </Body>
+            <Right>
+              <CheckBox checked={this.state.checkbox3} onPress={() => this.toggleSwitch3()} />
+            </Right>
+          </ListItem>
+
           <ListItem itemDivider>
               <Text>Procedures</Text>
             </ListItem> 
+
+
           <ListItem button onPress={() => this.toggleSwitch2()}>
             
             <Body>
-              <Text>List of procedures</Text>
+              <Text>Go and pay 100 birr at the finance office </Text>
             </Body>
             <Right>
               <CheckBox checked={this.state.checkbox2} onPress={() => this.toggleSwitch2()} />
+            </Right>
+          </ListItem>
+
+          <ListItem button onPress={() => this.toggleSwitch4()}>
+            
+            <Body>
+              <Text> Give your data and info at registration office and come after 3 days.</Text>
+            </Body>
+            <Right>
+              <CheckBox checked={this.state.checkbox4} onPress={() => this.toggleSwitch4()} />
             </Right>
           </ListItem>
           

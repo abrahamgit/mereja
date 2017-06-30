@@ -22,13 +22,29 @@ import {
   Input,
 } from "native-base";
 import { Grid, Row } from "react-native-easy-grid";
-
 import { setIndex } from "../../actions/list";
 import { openDrawer } from "../../actions/drawer";
 import styles from "./styles";
 
+//the api is here 
+import { mergaApi } from "../../utils/api.js" 
+
 
 class Home extends Component {
+
+//constractor added 
+  constructor(props){
+    super(props);
+    this.state ={
+      //for the refreshign perpose 
+      refreshing:true,
+    }
+  }
+
+
+
+
+
   static navigationOptions = {
     header: null
   };

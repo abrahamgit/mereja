@@ -44,10 +44,15 @@ class About extends Component {
           </Right>
         </Header>
 
-        <Content padder>
+        <Content padder >
           <Text>
-            Create Something Awesome from About page . . .
+            This app is a cross platform application that will provide required informaition about a services given by companies.
+          
           </Text>
+          <Text >Developed by THE THREE HACKATIEER </Text>
+          <Text>Yemesrach Tessema</Text>
+          <Text>Alazar Alemayehu</Text>
+          <Text>Abraham Mathewos</Text>
         </Content>
       </Container>
     );

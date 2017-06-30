@@ -42,38 +42,38 @@ const varun = require('../../../img/contacts/varun.png');
 const datas = [
   {
     img: pratik,
-    text: 'Kumar Pratik',
-    note: 'Its time to build a difference . .',
+    text: 'Ethio Telecom ',
+    note: 'some of the service we proviede . .',
     time: '3:43 pm',
   },
   {
     img: sanket,
-    text: 'Kumar Sanket',
-    note: 'One needs courage to be happy and smiling all time . . ',
+    text: 'Ethiopian National Bank  ',
+    note: 'some of the service we proviede . .',
     time: '1:12 pm',
   },
   {
     img: megha,
-    text: 'Megha',
-    note: 'Live a life style that matchs your vision',
+    text: 'Ethiopian Airline',
+    note: 'some of the service we proviede . .',
     time: '10:03 am',
   },
   {
     img: atul,
-    text: 'Atul Ranjan',
-    note: 'Failure is temporary, giving up makes it permanent',
+    text: 'Minstry of Education',
+    note: 'some of the service we proviede . .',
     time: '5:47 am',
   },
   {
     img: saurabh,
-    text: 'Saurabh Sahu',
-    note: 'The biggest risk is a missed opportunity !!',
+    text: 'Ethiopian Revenue Agency',
+    note: 'some of the service we proviede . .',
     time: '11:11 pm',
   },
   {
     img: varun,
-    text: 'Varun Sahu',
-    note: 'Wish I had a Time machine . .',
+    text: 'Ethiopian Emigration',
+    note: 'some of the service we proviede . .',
     time: '8:54 pm',
   },
 ];
@@ -140,9 +140,9 @@ class Home extends Component {
           <List
             dataArray={datas} renderRow={data =>
               <ListItem avatar>
-                <Left>
+                {/*<Left>
                   <Thumbnail source={data.img} />
-                </Left>
+                </Left>*/}
                 <Body>
                   <Text>{data.text}</Text>
                   <Text numberOfLines={1} note>{data.note}</Text>
