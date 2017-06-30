@@ -2,4 +2,4 @@
 import { AppRegistry } from 'react-native';
 import setup from './js/setup';
 
-AppRegistry.registerComponent('zooryaTender', setup);
+AppRegistry.registerComponent('mereja', setup);

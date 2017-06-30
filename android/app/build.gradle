@@ -88,7 +88,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.zooryatender"
+        applicationId "com.mereja"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
@@ -127,6 +127,8 @@ android {
 }
 
 dependencies {
+    // From node_modules
+    compile project(':react-native-smart-splashscreen')
     compile project(':react-native-code-push')
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.android.support:appcompat-v7:23.0.1"
