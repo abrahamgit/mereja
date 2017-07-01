@@ -10,7 +10,7 @@ import {
   Images,
   Icon
 } from "native-base";
-const routes = ["Home1", "Categories","Searchbar", "About"];
+const routes = ["Home1", "Categories","Searchbar", "About","BlankPage"];
 
 const tabbar = require("../../../images/tab/tabBar.png");
 
