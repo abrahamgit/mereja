@@ -36,11 +36,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    SplashScreen.close({
-        animationType: SplashScreen.animationType.scale,
-        duration: 850,
-        delay: 500,
-     })
+    
     CodePush.sync(
       { updateDialog: true, installMode: CodePush.InstallMode.IMMEDIATE },
       status => {
