@@ -12,6 +12,7 @@ import {
   Right,
   Body
 } from "native-base";
+import styles from "./styles";
 
 class About extends Component {
   static navigationOptions = {
@@ -20,8 +21,9 @@ class About extends Component {
   render() {
     const { props: { name, index, list } } = this;
     return (
-      <Container>
-        <Header>
+      <Container style={styles.container}>
+        <Header style={{backgroundColor:'#7cb4b4'}}>
+
           <Left>
             <Button transparent onPress={() => this.props.navigation.goBack()}>
               <Icon name="ios-arrow-back" />

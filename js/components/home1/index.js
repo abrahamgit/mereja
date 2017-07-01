@@ -37,9 +37,9 @@ class Home1 extends Component {
 
   render() {
     return (
-      <Container>
+      <Container >
         <View style={styles.container}>
-          <Content>
+          <Content style={{backgroundColor:"#c7e4eb"}}>
             <Image source={background} style={styles.shadow}>
               <View style={styles.bg}>
                 
