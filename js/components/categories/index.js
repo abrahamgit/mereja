@@ -22,6 +22,10 @@ import {
   List,
   ListItem,
 } from "native-base";
+import {
+  View,
+
+} from "react-native";
 import { Grid, Row } from "react-native-easy-grid";
 
 import { setIndex } from "../../actions/list";
@@ -93,7 +97,10 @@ class Home extends Component {
           <List
             dataArray={datas} renderRow={data =>
               <ListItem>
-                <Text>{data}</Text>
+                <Button onPress={() => this.props.onAdd()}>
+                  <Text>{data}</Text>
+                </Button>
+                
                 <Right>
                   <Icon name="arrow-forward" />
                 </Right>
