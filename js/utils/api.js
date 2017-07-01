@@ -1,7 +1,10 @@
 import axios from 'axios';
 
 
-const API_URL = 'http://node-hnapi.herokuapp.com';
+
+const API_URL = 'http://www.info.com/';
+
+
 
 const merejaApi = {
     getCategories: () => {
@@ -15,7 +18,6 @@ const merejaApi = {
   },
    getServiceDetail: () => {
     return axios.get(`${API_URL}/services/${id}/details/${id}`);
-
   },
    
 };
