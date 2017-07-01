@@ -13,6 +13,8 @@ export default (DrawNav = DrawerNavigator(
     About: {screen: About},
     Home1: {screen: Home1},
     Searchbar: {screen: Searchbar},
+    BlankPage2:{screen:BlankPage2},
+
     
 
   },

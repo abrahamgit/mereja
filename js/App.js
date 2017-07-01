@@ -6,6 +6,7 @@ import { Container, Content, Text, View } from "native-base";
 import Modal from "react-native-modalbox";
 import MainStackRouter from "./Routers/MainStackRouter";
 import ProgressBar from "./components/loaders/ProgressBar";
+import SplashScreen from 'react-native-smart-splash-screen'
 
 import theme from "./themes/base-theme";
 
@@ -35,6 +36,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    
     CodePush.sync(
       { updateDialog: true, installMode: CodePush.InstallMode.IMMEDIATE },
       status => {

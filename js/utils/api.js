@@ -1,6 +1,9 @@
 import axios from 'axios';
 
+
+
 const API_URL = 'http://www.info.com/';
+
 
 
 const merejaApi = {
@@ -8,7 +11,6 @@ const merejaApi = {
     return axios.get(`${API_URL}/categories`);
   },
   getCompanies: () => {
-
     return axios.get(`${API_URL}/categories/${id}/companies`);
   },
    getServices: () => {
@@ -16,8 +18,8 @@ const merejaApi = {
   },
    getServiceDetail: () => {
     return axios.get(`${API_URL}/services/${id}/details/${id}`);
-
-  } 
+  },
+   
 };
 
 export default merejaApi;

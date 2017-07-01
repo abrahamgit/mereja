@@ -14,7 +14,11 @@
     "lodash": "^4.13.1",
     "mobx": "^3.1.16",
     "mobx-react": "^4.2.2",
+<<<<<<< HEAD
+     "moment": "^2.13.0",
+=======
     "moment": "^2.13.0",
+>>>>>>> b08a8c7204880d123dde2876957807d0e77a4f32
     "native-base": "2.1.4",
     "react": "16.0.0-alpha.12",
     "react-native": "0.45.1",
