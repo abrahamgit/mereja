@@ -45,51 +45,19 @@ export default class BlankPage1 extends Component {
     fetch(REQUEST_URL)
     .then((response) => response.json())
     .then((responseData) => {
-//new  //use this to ritrive list of datas and 
-      // const ds = new ListView.DataSource({ rowHasChanged: (row1, row2) => row1 !== row2 });
-			// 	const dataSource = ds.cloneWithRows(this.props.list.results);
-			// 	this.setState({
-			// 		list: this.props.list,
-			// 		dataSource,
-			// 		isLoading: false 
-//new
+
        
         this.setState({
             thought: { title: responseData[this.state.index].title.rendered, content:responseData[this.state.index].content.rendered },
 
             
         });
-        // this.setState({results: this.state.results.concat([thought])});
-        // this.setState({ results: [...this.state.results, ...thought] });
- 
-      //console.log(results);
+
     })
     .done();    
 }
 
-// //news
-// 			_retrieveNextPage(type) {
-// 		if (this.state.currentPage !== this.props.list.total_pages) {
-// 			this.setState({
-// 				currentPage: this.state.currentPage + 1
-// 			});
 
-// 			axios.get(REQUEST_URL)
-// 				.then(res => {
-// 					const data = this.state.list.results;
-// 					const newData = res.data.results;
-
-// 					newData.map((item, index) => data.push(item));
-
-// 					this.setState({
-// 						dataSource: this.state.dataSource.cloneWithRows(this.state.list.results)
-// 					});
-// 				}).catch(err => {
-// 					console.log('next page', err); // eslint-disable-line
-// 				});
-// 		}
-// 	}
-//new end
 
 
  renderLoadingView () {
