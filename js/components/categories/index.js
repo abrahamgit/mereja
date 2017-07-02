@@ -22,13 +22,17 @@ import {
   List,
   ListItem,
 } from "native-base";
+import {
+  View,
+
+} from "react-native";
 import { Grid, Row } from "react-native-easy-grid";
 
 import { setIndex } from "../../actions/list";
 import { openDrawer } from "../../actions/drawer";
 import styles from "./styles";
 
-const datas = ['Education', 'Finance', ' Buisness ', 'Transportation '];
+const datas = ['Education', 'Finance', ' Consumer services ', 'Telecommunications ' ];
 
 class Home extends Component {
   static navigationOptions = {
@@ -93,17 +97,23 @@ class Home extends Component {
           <List
             dataArray={datas} renderRow={data =>
               <ListItem>
-                <Text>{data}</Text>
+                  <TouchableOpacity 
+                  onPress={() => this.props.navigation.navigate("Company")}
+                  style={styles.rowItem}>
+                    <Text style={styles.itemName}>{data}</Text>
+                    <View style={{flex:1}}/>
+                  </TouchableOpacity>
+                  
                 <Right>
                   <Icon name="arrow-forward" />
                 </Right>
               </ListItem>
           }
           />
-
+{/*
           <Button onPress={() => this.props.navigation.navigate("Company")}>
           <Text>Go to category</Text>
-        </Button>
+        </Button>*/}
 
         </Content>
         

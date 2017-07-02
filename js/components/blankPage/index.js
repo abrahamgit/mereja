@@ -13,31 +13,35 @@ import {
   View,
   TouchableHighlight,
   Dimensions,
-  ListView
+  ListView,
+  List,
+  ListItem,
 } from 'react-native';
 
+//import api from './data.js';
 var MOCKED_DATA = [
   {title: 'Deep Thought #1', content: "If there's no 'there' there, where is it and what's there?"},
 ];
 
-var REQUEST_URL = 'http://192.168.2.35/deep-thoughts.dev/wp-json/wp/v2/posts/';
+// var REQUEST_URL = 'http://192.168.43.29/deep-thoughts.dev/wp-json/wp/v2/posts/';
 
 
 export default class BlankPage1 extends Component {
 
+
     constructor () {
-    super()
+    super(props);
       this.state = {
         thought: MOCKED_DATA,
         index:1,
         list: {
-				results: []
+				rovers: []
 			}
       }
   }
 
   componentDidMount() {
-      this.fetchData();
+      //this.fetchData();
     }
 
   fetchData() {
@@ -45,16 +49,20 @@ export default class BlankPage1 extends Component {
     fetch(REQUEST_URL)
     .then((response) => response.json())
     .then((responseData) => {
-
-       
         this.setState({
-            thought: { title: responseData[this.state.index].title.rendered, content:responseData[this.state.index].content.rendered },
-
-            
+            thought: { title: responseData[this.state.index].title.rendered, content:responseData[this.state.index].content.rendered },           
         });
 
     })
     .done();    
+}
+
+componentWillMount(){
+  api.getRovers().then((res)=> {
+    this.setState({
+      rovers: res.rovers
+    })
+  });
 }
 
 
@@ -71,6 +79,7 @@ export default class BlankPage1 extends Component {
   }
 
   render() {
+    console.log("Rovers: ", this.state.rovers);
     if ( !this.state.thought ) {
       return this.renderLoadingView();
     }
@@ -86,7 +95,31 @@ export default class BlankPage1 extends Component {
             {this.state.thought.content}
           </Text>
         </View>
+
+        <List
+            dataArray={datas} renderRow={data =>
+              <ListItem>
+                  <TouchableOpacity 
+                  onPress={() => this.props.navigation.navigate("Company")}
+                  style={styles.rowItem}>
+                    <Text style={styles.title}>
+                      {this.state.thought.title}
+                    </Text>
+                      <Text style={styles.text}>
+                        {this.state.thought.content}
+                    </Text>
+                    <View style={{flex:1}}/>
+                  </TouchableOpacity>
+                  
+                <Right>
+                  <Icon name="arrow-forward" />
+                </Right>
+              </ListItem>
+          }
+          />
         <View style={styles.buttonContainer}>
+
+
 
        
 
@@ -95,9 +128,9 @@ export default class BlankPage1 extends Component {
             style={styles.button}
             underlayColor='#ccc'
             
-            onPress={this.fetchData()}
+            onPress={this.fetchData() }
           >
-            <Text style={styles.buttonText}>Hmmmmm...</Text>
+            <Text style={styles.buttonText}>Next...</Text>
           </TouchableHighlight>
         </View>
       </View>

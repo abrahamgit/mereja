@@ -19,7 +19,8 @@ import {
   Tabs,
   TabHeading,
   List,
-  ListItem
+  ListItem,
+  View
 } from "native-base";
 import { Grid, Row } from "react-native-easy-grid";
 
@@ -27,7 +28,7 @@ import { setIndex } from "../../actions/list";
 import { openDrawer } from "../../actions/drawer";
 import styles from "./styles";
 
-const datas = ['Booking Tickets', 'Get Educational documents', 'Get a passport ', ' Replace old passport', 'Pay Tax', ' Get a license '];
+const datas = [ 'Replace Lost examination certificate', ' Request for Correction of result', ' Register for private National Examination',];
 
 
 class Home extends Component {
@@ -90,10 +91,15 @@ class Home extends Component {
         <Content>
           <Text>Service Lists </Text>
 
-          <List
+           <List
             dataArray={datas} renderRow={data =>
               <ListItem>
-                <Text>{data}</Text>
+                  <TouchableOpacity style={styles.rowItem}
+                  onPress={() => this.props.navigation.navigate("ServiceDetail")}>
+                    <Text style={styles.itemName}>{data}</Text>
+                    <View style={{flex:1}}/>
+                  </TouchableOpacity>
+                  
                 <Right>
                   <Icon name="arrow-forward" />
                 </Right>
@@ -101,9 +107,9 @@ class Home extends Component {
           }
           />
           
-          <Button onPress={() => this.props.navigation.navigate("ServiceDetail")}>
+          {/*<Button onPress={() => this.props.navigation.navigate("ServiceDetail")}>
           <Text>Go to Service detail</Text>
-        </Button>
+        </Button>*/}
         </Content>
       </Container>
     );

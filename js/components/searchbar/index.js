@@ -20,6 +20,9 @@ import {
   TabHeading,
   Item,
   Input,
+  View,
+  ListItem,
+  List
 } from "native-base";
 import { Grid, Row } from "react-native-easy-grid";
 import { setIndex } from "../../actions/list";
@@ -28,6 +31,7 @@ import styles from "./styles";
 
 //the api is here 
 import { mergaApi } from "../../utils/api.js" 
+const datas = [ 'Replace Lost examination certificate'];
 
 
 class Home extends Component {
@@ -87,10 +91,21 @@ class Home extends Component {
 
         <Content padder >
       
-         <Text>Todo on the search list </Text>
-         <Button onPress={() => this.props.navigation.navigate("ServiceDetail")}>
-          <Text>Go to sellected item </Text>
-        </Button>
+         <List
+            dataArray={datas} renderRow={data =>
+              <ListItem>
+                  <TouchableOpacity style={styles.rowItem}
+                  onPress={() => this.props.navigation.navigate("ServiceDetail")}>
+                    <Text style={styles.itemName}>{data}</Text>
+                    <View style={{flex:1}}/>
+                  </TouchableOpacity>
+                  
+                <Right>
+                  <Icon name="arrow-forward" />
+                </Right>
+              </ListItem>
+          }
+          />
         </Content>
         
       </Container>

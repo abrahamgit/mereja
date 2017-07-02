@@ -18,4 +18,14 @@ export default {
   mt: {
     marginTop: 18,
   },
+  rowItem:{
+    flexDirection:"row",
+    justifyContent:"flex-start",
+    alignItems:"center",
+    height:50
+  },
+  itemName:{
+    mariginLeft:25
+  }
 };
+
