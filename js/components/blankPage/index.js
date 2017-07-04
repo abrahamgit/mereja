@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import axios from 'axios';
 import {
@@ -14,54 +8,51 @@ import {
   TouchableHighlight,
   Dimensions,
   ListView,
-  List,
-  ListItem,
+  Container,
+  Header,
+  Left,
+  Right,
+  Body,
+  Title,
+  Button,
+  List, 
+  ListItem, 
+  Icon, 
+  Content,
+  
 } from 'react-native';
 
-//import api from './data.js';
 var MOCKED_DATA = [
   {title: 'Deep Thought #1', content: "If there's no 'there' there, where is it and what's there?"},
 ];
 
-// var REQUEST_URL = 'http://192.168.43.29/deep-thoughts.dev/wp-json/wp/v2/posts/';
+var REQUEST_URL = 'http://192.168.0.83/deep-thoughts.dev/wp-json/wp/v2/posts/';
 
 
 export default class BlankPage1 extends Component {
 
-
     constructor () {
-    super(props);
+    super()
       this.state = {
         thought: MOCKED_DATA,
         index:1,
         list: {
-				rovers: []
+				results: []
 			}
       }
   }
 
   componentDidMount() {
-      //this.fetchData();
+      this.fetchData();
     }
 
   fetchData() {
-    // this.state.index = this.state.index + 1;
-    fetch(REQUEST_URL)
-    .then((response) => response.json())
-    .then((responseData) => {
-        this.setState({
-            thought: { title: responseData[this.state.index].title.rendered, content:responseData[this.state.index].content.rendered },           
-        });
-
-    })
-    .done();    
-}
-
-componentWillMount(){
-  api.getRovers().then((res)=> {
-    this.setState({
-      rovers: res.rovers
-    })
+   axios.get(REQUEST_URL)
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
   });
 }
 
@@ -79,35 +70,60 @@ componentWillMount(){
   }
 
   render() {
-    console.log("Rovers: ", this.state.rovers);
     if ( !this.state.thought ) {
       return this.renderLoadingView();
     }
 
  
     return (
-      <View style={styles.container}>
-        <View style={styles.textContainer}>
-          <Text style={styles.title}>
-           {this.state.thought.title}
-          </Text>
-          <Text style={styles.text}>
-            {this.state.thought.content}
-          </Text>
-        </View>
+      <Container style={styles.container}>
+        <Header style={{backgroundColor:'#7cb4b4'}}>
 
-        <List
+
+          <Left>
+            <Button
+              transparent
+              onPress={() => DrawerNav.navigate("DrawerOpen")}
+            >
+              <Icon active name="menu" />
+            </Button>
+          </Left>
+
+          <Body>
+            <Title>Categories</Title>
+          </Body>
+
+          <Right>
+
+            <Button
+              transparent
+              onPress={() => {
+                DrawerNav.dispatch(
+                  NavigationActions.reset({
+                    index: 0,
+                    actions: [NavigationActions.navigate({ routeName: "Home" })]
+                  })
+                );
+                DrawerNav.goBack();
+              }}
+            >
+              <Icon active name="power" />
+            </Button>
+          </Right>
+
+
+        </Header>
+
+        <Content>
+          <Text>Todo Category List</Text>
+
+          <List
             dataArray={datas} renderRow={data =>
               <ListItem>
                   <TouchableOpacity 
                   onPress={() => this.props.navigation.navigate("Company")}
                   style={styles.rowItem}>
-                    <Text style={styles.title}>
-                      {this.state.thought.title}
-                    </Text>
-                      <Text style={styles.text}>
-                        {this.state.thought.content}
-                    </Text>
+                    <Text style={styles.itemName}>{data}</Text>
                     <View style={{flex:1}}/>
                   </TouchableOpacity>
                   
@@ -117,23 +133,14 @@ componentWillMount(){
               </ListItem>
           }
           />
-        <View style={styles.buttonContainer}>
+{/*
+          <Button onPress={() => this.props.navigation.navigate("Company")}>
+          <Text>Go to category</Text>
+        </Button>*/}
 
-
-
-       
-
-
-          <TouchableHighlight
-            style={styles.button}
-            underlayColor='#ccc'
-            
-            onPress={this.fetchData() }
-          >
-            <Text style={styles.buttonText}>Next...</Text>
-          </TouchableHighlight>
-        </View>
-      </View>
+        </Content>
+        
+      </Container>
     );
   }
 }
@@ -182,6 +189,8 @@ const styles = StyleSheet.create({
     color: '#666666',
   },
 });
+
+
 
 
 

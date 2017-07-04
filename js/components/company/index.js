@@ -79,10 +79,133 @@ const datas = [
   },
 ];
 
+
+
+const datasF = [
+  {
+    img: pratik,
+    text: 'Ministry of Education ',
+    note: 'some of the service we proviede . .',
+    time: '3:43 pm',
+  },
+  {
+    img: sanket,
+    text: 'Ethiopian National Examination Agency ',
+    note: 'some of the service we proviede . .',
+    time: '1:12 pm',
+  },
+  {
+    img: megha,
+    text: ' Ethiopia search and Education Network',
+    note: 'some of the service we proviede . .',
+    time: '10:03 am',
+  },
+  {
+    img: atul,
+    text: 'Minstry of Education',
+    note: 'some of the service we proviede . .',
+    time: '5:47 am',
+  },
+  {
+    img: saurabh,
+    text: 'Ethiopian Revenue Agency',
+    note: 'some of the service we proviede . .',
+    time: '11:11 pm',
+  },
+  {
+    img: varun,
+    text: 'Ethiopian Emigration',
+    note: 'some of the service we proviede . .',
+    time: '8:54 pm',
+  },
+];
+
+const datasC = [
+  {
+    img: pratik,
+    text: 'Ministry of Education ',
+    note: 'some of the service we proviede . .',
+    time: '3:43 pm',
+  },
+  {
+    img: sanket,
+    text: 'Ethiopian National Examination Agency ',
+    note: 'some of the service we proviede . .',
+    time: '1:12 pm',
+  },
+  {
+    img: megha,
+    text: ' Ethiopia search and Education Network',
+    note: 'some of the service we proviede . .',
+    time: '10:03 am',
+  },
+  {
+    img: atul,
+    text: 'Minstry of Education',
+    note: 'some of the service we proviede . .',
+    time: '5:47 am',
+  },
+  {
+    img: saurabh,
+    text: 'Ethiopian Revenue Agency',
+    note: 'some of the service we proviede . .',
+    time: '11:11 pm',
+  },
+  {
+    img: varun,
+    text: 'Ethiopian Emigration',
+    note: 'some of the service we proviede . .',
+    time: '8:54 pm',
+  },
+];
+
+
+ const datasT = [
+  {
+    img: pratik,
+    text: 'Ministry of Education ',
+    note: 'some of the service we proviede . .',
+    time: '3:43 pm',
+  },
+  {
+    img: sanket,
+    text: 'Ethiopian National Examination Agency ',
+    note: 'some of the service we proviede . .',
+    time: '1:12 pm',
+  },
+  {
+    img: megha,
+    text: ' Ethiopia search and Education Network',
+    note: 'some of the service we proviede . .',
+    time: '10:03 am',
+  },
+  {
+    img: atul,
+    text: 'Minstry of Education',
+    note: 'some of the service we proviede . .',
+    time: '5:47 am',
+  },
+  {
+    img: saurabh,
+    text: 'Ethiopian Revenue Agency',
+    note: 'some of the service we proviede . .',
+    time: '11:11 pm',
+  },
+  {
+    img: varun,
+    text: 'Ethiopian Emigration',
+    note: 'some of the service we proviede . .',
+    time: '8:54 pm',
+  },
+];
+
 class Home extends Component {
   static navigationOptions = {
     header: null
   };
+
+  
+  
   static propTypes = {
     name: React.PropTypes.string,
     setIndex: React.PropTypes.func,
