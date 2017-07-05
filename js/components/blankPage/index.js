@@ -114,31 +114,7 @@ export default class BlankPage1 extends Component {
 
         </Header>
 
-        <Content>
-          <Text>Todo Category List</Text>
-
-          <List
-            dataArray={datas} renderRow={data =>
-              <ListItem>
-                  <TouchableOpacity 
-                  onPress={() => this.props.navigation.navigate("Company")}
-                  style={styles.rowItem}>
-                    <Text style={styles.itemName}>{data}</Text>
-                    <View style={{flex:1}}/>
-                  </TouchableOpacity>
-                  
-                <Right>
-                  <Icon name="arrow-forward" />
-                </Right>
-              </ListItem>
-          }
-          />
-{/*
-          <Button onPress={() => this.props.navigation.navigate("Company")}>
-          <Text>Go to category</Text>
-        </Button>*/}
-
-        </Content>
+      
         
       </Container>
     );
