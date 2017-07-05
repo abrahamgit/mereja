@@ -147,6 +147,16 @@ class Home extends Component {
               <CheckBox checked={this.state.checkbox3} onPress={() => this.toggleSwitch3()} />
             </Right>
           </ListItem>
+          
+          <ListItem button onPress={() => this.toggleSwitch3()}>
+            
+            <Body>
+              <Text>An Assurance Document from Your kebele Police </Text>
+            </Body>
+            <Right>
+              <CheckBox checked={this.state.checkbox3} onPress={() => this.toggleSwitch3()} />
+            </Right>
+          </ListItem>
 
           <ListItem itemDivider>
               <Text>Procedures</Text>

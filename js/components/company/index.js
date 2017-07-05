@@ -20,6 +20,7 @@ import {
   Tabs,
   TabHeading,
   List,
+  View,
   ListItem,
   Thumbnail,
 
@@ -42,19 +43,139 @@ const varun = require('../../../img/contacts/varun.png');
 const datas = [
   {
     img: pratik,
-    text: 'Ethio Telecom ',
+    text: 'Ministry of Education ',
     note: 'some of the service we proviede . .',
     time: '3:43 pm',
   },
   {
     img: sanket,
-    text: 'Ethiopian National Bank  ',
+    text: 'Ethiopian National Examination Agency ',
     note: 'some of the service we proviede . .',
     time: '1:12 pm',
   },
   {
     img: megha,
-    text: 'Ethiopian Airline',
+    text: ' Ethiopia search and Education Network',
+    note: 'some of the service we proviede . .',
+    time: '10:03 am',
+  },
+  {
+    img: atul,
+    text: 'Minstry of Education',
+    note: 'some of the service we proviede . .',
+    time: '5:47 am',
+  },
+  {
+    img: saurabh,
+    text: 'Ethiopian Revenue Agency',
+    note: 'some of the service we proviede . .',
+    time: '11:11 pm',
+  },
+  {
+    img: varun,
+    text: 'Ethiopian Emigration',
+    note: 'some of the service we proviede . .',
+    time: '8:54 pm',
+  },
+];
+
+
+
+const datasF = [
+  {
+    img: pratik,
+    text: 'Ministry of Education ',
+    note: 'some of the service we proviede . .',
+    time: '3:43 pm',
+  },
+  {
+    img: sanket,
+    text: 'Ethiopian National Examination Agency ',
+    note: 'some of the service we proviede . .',
+    time: '1:12 pm',
+  },
+  {
+    img: megha,
+    text: ' Ethiopia search and Education Network',
+    note: 'some of the service we proviede . .',
+    time: '10:03 am',
+  },
+  {
+    img: atul,
+    text: 'Minstry of Education',
+    note: 'some of the service we proviede . .',
+    time: '5:47 am',
+  },
+  {
+    img: saurabh,
+    text: 'Ethiopian Revenue Agency',
+    note: 'some of the service we proviede . .',
+    time: '11:11 pm',
+  },
+  {
+    img: varun,
+    text: 'Ethiopian Emigration',
+    note: 'some of the service we proviede . .',
+    time: '8:54 pm',
+  },
+];
+
+const datasC = [
+  {
+    img: pratik,
+    text: 'Ministry of Education ',
+    note: 'some of the service we proviede . .',
+    time: '3:43 pm',
+  },
+  {
+    img: sanket,
+    text: 'Ethiopian National Examination Agency ',
+    note: 'some of the service we proviede . .',
+    time: '1:12 pm',
+  },
+  {
+    img: megha,
+    text: ' Ethiopia search and Education Network',
+    note: 'some of the service we proviede . .',
+    time: '10:03 am',
+  },
+  {
+    img: atul,
+    text: 'Minstry of Education',
+    note: 'some of the service we proviede . .',
+    time: '5:47 am',
+  },
+  {
+    img: saurabh,
+    text: 'Ethiopian Revenue Agency',
+    note: 'some of the service we proviede . .',
+    time: '11:11 pm',
+  },
+  {
+    img: varun,
+    text: 'Ethiopian Emigration',
+    note: 'some of the service we proviede . .',
+    time: '8:54 pm',
+  },
+];
+
+
+ const datasT = [
+  {
+    img: pratik,
+    text: 'Ministry of Education ',
+    note: 'some of the service we proviede . .',
+    time: '3:43 pm',
+  },
+  {
+    img: sanket,
+    text: 'Ethiopian National Examination Agency ',
+    note: 'some of the service we proviede . .',
+    time: '1:12 pm',
+  },
+  {
+    img: megha,
+    text: ' Ethiopia search and Education Network',
     note: 'some of the service we proviede . .',
     time: '10:03 am',
   },
@@ -82,6 +203,9 @@ class Home extends Component {
   static navigationOptions = {
     header: null
   };
+
+  
+  
   static propTypes = {
     name: React.PropTypes.string,
     setIndex: React.PropTypes.func,
@@ -137,25 +261,23 @@ class Home extends Component {
 
         <Content>
           <Text> ToDO Company Name List </Text>
-          <List
+           <List
             dataArray={datas} renderRow={data =>
-              <ListItem avatar>
-                {/*<Left>
-                  <Thumbnail source={data.img} />
-                </Left>*/}
-                <Body>
-                  <Text>{data.text}</Text>
-                  <Text numberOfLines={1} note>{data.note}</Text>
-                </Body>
+              <ListItem>
+                  <TouchableOpacity style={styles.rowItem} 
+                  onPress={() => this.props.navigation.navigate("Service")}>
+                    <Text style={styles.itemName}>{data.text}</Text>
+                    <Text numberOfLines={1} note>{data.note}</Text>
+                    
+                    <View style={{flex:1}}/>
+                  </TouchableOpacity>
+                  
                 <Right>
-                  <Text note>{data.time}</Text>
+                  <Icon name="arrow-forward" />
                 </Right>
               </ListItem>
-        }
+          }
           />
-          <Button onPress={() => this.props.navigation.navigate("Service")}>
-          <Text>Go to Service</Text>
-        </Button>
           
         </Content>
       </Container>

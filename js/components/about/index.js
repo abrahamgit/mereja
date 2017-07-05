@@ -49,7 +49,7 @@ class About extends Component {
             This app is a cross platform application that will provide required informaition about a services given by companies.
           
           </Text>
-          <Text >Developed by THE THREE HACKATIEER </Text>
+          <Text >Developed by THE THREE HACKATIEERS </Text>
           <Text>Yemesrach Tessema</Text>
           <Text>Alazar Alemayehu</Text>
           <Text>Abraham Mathewos</Text>

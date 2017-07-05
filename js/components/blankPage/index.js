@@ -11,37 +11,14 @@ import {
   Text,
   View,
   ListView,
-  TouchableOpacity
 } from 'react-native';
-import {
-  Container,
-  Header,
-  Title,
-  Content,
-  Button,
-  Icon,
-  Left,
-  Body,
-  Right,
-  Tab,
-  Tabs,
-  TabHeading,
-  List,
-  ListItem,
-  Thumbnail,
-
-} from "native-base";
-import styles from "./styles";
 
 let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-export default class BlankPage extends Component {
-  static navigationOptions = {
-    header: null
-  };
+export default class BlankPage1 extends Component {
   constructor(props){
     super(props);
     this.state={
-        jsonURL: 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json',
+        jsonURL: 'http://demo.morgenrot-wolf.de/qubidu/test.json',
         dataSource: ds.cloneWithRows(['row 1', 'row 2'])
     }
   }
@@ -56,17 +33,18 @@ export default class BlankPage extends Component {
      .then((responseData) =>
      {
           this.setState({ 
-            dataSource: this.state.dataSource.cloneWithRows(responseData.movies)
+            dataSource: this.state.dataSource.cloneWithRows(responseData)
           });
      })
      .done();
    }
 
-renderMovie(movie) {
+renderRow(rowData) {
   return (
     <View style={styles.row}>
-      <Text>{movie.title}</Text>
-      <Text>{movie.year}</Text>
+      <Text>{rowData.Gattung}</Text>
+      <Text>{rowData.ab}</Text>
+      <Text>{rowData.bis}</Text>
     </View>
   );
 }
@@ -77,7 +55,7 @@ renderMovie(movie) {
 
          <ListView
               dataSource={this.state.dataSource}
-              renderRow={this.renderMovie}
+              renderRow={this.renderRow}
             />
       </View>
 
@@ -94,4 +72,4 @@ const styles=StyleSheet.create({
 });
 
 
-AppRegistry.registerComponent('BlankPage', () => BlankPage);
+AppRegistry.registerComponent('BlankPage1', () => BlankPage1);
